@@ -1,3 +1,6 @@
+This project is based on Ed Roh's tutorial here: https://youtu.be/wYpCWwD1oz0?si=b9vLAoPRor5c-5FG
+At the time of writing its been modified to use FastAPI with a local PostgreSQL instance and has a dependency on the fast-api2 project running as a back-end server.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
