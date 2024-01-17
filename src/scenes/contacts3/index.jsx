@@ -88,12 +88,19 @@ const Contacts = () => {
     download(csvConfig)(csv);
   };
 
+  //DELETE action
+  const openDeleteConfirmModal = (row: MRT_Row<User>) => {
+    if (window.confirm('Are you sure you want to delete this record?')) {
+      //INSERT DELETE API CALL HERE
+    }
+  };
+
   const table = useMaterialReactTable({
     columns,
     data,
     enableStickyHeader: true,
     enableStickyFooter: true,
-    //enableRowSelection: true,
+    enableRowSelection: true,
     enableEditing: true,
     editDisplayMode: 'modal',
     paginationDisplayMode: "pages",
@@ -171,6 +178,20 @@ const Contacts = () => {
       //optionally, completely override the render of the dialog content
       //use `internalEditComponents` to render the generated text fields, or completely render your own form and inputs
     },
+    renderRowActions: ({ row, table }) => (
+      <Box sx={{ display: 'flex', gap: '1rem' }}>
+        <Tooltip title="Edit">
+          <IconButton onClick={() => table.setEditingRow(row)}>
+            <EditIcon />
+          </IconButton>
+        </Tooltip>
+        <Tooltip title="Delete">
+          <IconButton color="error" onClick={() => openDeleteConfirmModal(row)}>
+            <DeleteIcon />
+          </IconButton>
+        </Tooltip>
+      </Box>
+    ),
   });
 
   return (
