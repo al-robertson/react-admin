@@ -4,6 +4,7 @@ import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import {Routes, Route} from "react-router-dom";
+import Home from "./scenes/home";
 import Team from "./scenes/team";
 import Invoices from "./scenes/invoices";
 import Contacts from "./scenes/contacts";
@@ -36,6 +37,7 @@ function App() {
             <Topbar />
             <Routes>
               <Route path="/" element={<Dashboard />}/>
+              <Route path="/home" element={<Home />}/>              
               <Route path="/team" element={<Team />}/>
               <Route path="/contacts" element={<Contacts />}/>
               <Route path="/contacts2" element={<Contacts2 />}/>
