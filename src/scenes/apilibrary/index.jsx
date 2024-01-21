@@ -11,8 +11,13 @@ import CustomCard from "../../components/CustomCard";
 import LargeCard from "../../components/LargeCard";
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
+import ForestOutlinedIcon from '@mui/icons-material/ForestOutlined';
+import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
+import LanOutlinedIcon from '@mui/icons-material/LanOutlined';
+import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
+import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 
-const Home = () => {
+const APILibrary = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -20,26 +25,11 @@ const Home = () => {
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Box flexGrow={1} /> {/* Spacer element */}
-        <Box>
-          <Button
-            sx={{
-              backgroundColor: colors.blueAccent[700],
-              color: colors.grey[100],
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <ContactSupportOutlinedIcon sx={{ mr: "10px" }} />
-            Contact Us
-          </Button>
-        </Box>
+        <Header title="API Library" subtitle="Welcome to the API Library" />
       </Box>
-
       {/* ROW 1 */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <RegionHeader title="Favourites" subtitle="Add your favourites here." />
+        <RegionHeader title="Sustainability" subtitle="View All (3)" />
       </Box>
       <Box
         display="grid"
@@ -55,9 +45,9 @@ const Home = () => {
           justifyContent="center"
         >
           <CustomCard
-            title="HS Status Dashboard"
-            content="Rolled up live status board for all platforms."
-            icon={<InsertChartOutlinedIcon sx={{ fontSize: "40px" }} />}
+            title="Climate Dashboard"
+            content="Total carbon by franchise, domain or application."
+            icon={<ForestOutlinedIcon sx={{ fontSize: "40px" }} />}
           />
         </Box>
         <Box
@@ -68,9 +58,9 @@ const Home = () => {
           justifyContent="center"
         >
           <CustomCard
-            title="Block Storage Status Dashboard"
-            content="Current array status"
-            icon={<InsertChartOutlinedIcon sx={{ fontSize: "40px" }} />}
+            title="VMware vROps"
+            content="Infrastructure carbon footprint & righ-size data."
+            icon={<ForestOutlinedIcon sx={{ fontSize: "40px" }} />}
           />
         </Box>
         <Box
@@ -81,90 +71,72 @@ const Home = () => {
           justifyContent="center"
         >
           <CustomCard
-            title="Unix Platform Dashboard"
-            content="Current status of the Unix estate"
-            icon={<SpaceDashboardOutlinedIcon sx={{ fontSize: "40px" }} />}
+            title="Google Cloud (GCP)"
+            content="Carbon footprint for GCP hosted applications"
+            icon={<ForestOutlinedIcon sx={{ fontSize: "40px" }} />}
           />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <BookmarkAddOutlinedIcon
-            sx={{ fontSize: "60px", color: colors.grey[500] }}
-          />
-          <Typography variant="h6" color={colors.grey[500]} sx={{ mt: 2 }}>
-            Add a new favourite
-          </Typography>
         </Box>
       </Box>
       {/* ROW 2 */}
-      <Box
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-        mt="40px"
-      >
-        <RegionHeader
-          title="Quick actions"
-          subtitle="Let's go...shortcuts to common tasks."
-        />
+      <Box display="flex" justifyContent="space-between" alignItems="center" mt="40px">
+        <RegionHeader title="Infrastructure" subtitle="View All (4)"/>
       </Box>
       <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="200px"
+        gridAutoRows="140px"
         gap="20px"
       >
-        <Box
-          gridColumn="span 4"
+      <Box
+          gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
-          <LargeCard
-            content="Browse our dashboards and reports."
-            icon={
-              <InsertChartOutlinedIcon
-                sx={{ fontSize: "80px", color: colors.greenAccent[300] }}
-              />
-            }
+          <CustomCard
+            title="ServiceNow CMDB"
+            content="Various application & infrastructure related API routes."
+            icon={<Inventory2OutlinedIcon sx={{ fontSize: "40px" }} />}
           />
         </Box>
         <Box
-          gridColumn="span 4"
+          gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
-          <LargeCard
-            content="Browse our API library."
-            icon={
-              <LibraryBooksOutlinedIcon
-                sx={{ fontSize: "80px", color: colors.greenAccent[300] }}
-              />
-            }
+          <CustomCard
+            title="Unix platform metrics"
+            content="Prometheus API for Unix platform data."
+            icon={<LanOutlinedIcon sx={{ fontSize: "40px" }} />}
           />
         </Box>
         <Box
-          gridColumn="span 4"
+          gridColumn="span 3"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
-          <LargeCard
-            content="View our coaching and learning tools."
-            icon={
-              <SchoolOutlinedIcon
-                sx={{ fontSize: "80px", color: colors.greenAccent[300] }}
-              />
-            }
+          <CustomCard
+            title="Block Storage API"
+            content="Storage status & utilisation."
+            icon={<StorageOutlinedIcon sx={{ fontSize: "40px" }} />}
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <CustomCard
+            title="Database Compliance API"
+            content="Reports compliance across the DB estate. "
+            icon={<VerifiedUserOutlinedIcon sx={{ fontSize: "40px" }} />}
           />
         </Box>
       </Box>
@@ -172,4 +144,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default APILibrary;

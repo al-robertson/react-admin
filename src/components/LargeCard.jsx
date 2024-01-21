@@ -6,20 +6,17 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 
-const CustomCard = ({ title, content, icon }) => {
+const LargeCard = ({ content, icon }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
     <Card sx={{ minWidth: 275, 
-                height: 200, 
+                minHeight: 200, 
                 position: 'relative', 
                 ':hover': { boxShadow: 10,},
-                backgroundColor: colors.primary[400]  }}>
+                backgroundColor: colors.primary[400]  }}> {/* Ensure relative positioning */}
       <CardContent>
-        <Typography variant="h5" color={colors.grey[100]} gutterBottom>
-          {title}
-        </Typography>
-        <Typography color={colors.greenAccent[400]} sx={{ fontSize: 14 }} component="div">
+        <Typography variant="h3" color={colors.grey[100]} gutterBottom>
           {content}
         </Typography>
       </CardContent>
@@ -27,7 +24,7 @@ const CustomCard = ({ title, content, icon }) => {
         <Button size="small" sx={{color: colors.redAccent[400]}}>Click to view</Button>
       </CardActions>
       {icon && (
-        <Box sx={{ color: colors.primary[700], position: 'absolute', bottom: 8, right: 8 }}> 
+        <Box sx={{ position: 'absolute', bottom: 8, right: 8 }}> 
           {icon}
         </Box>
       )}
@@ -35,4 +32,4 @@ const CustomCard = ({ title, content, icon }) => {
   );
 };
 
-export default CustomCard;
+export default LargeCard;

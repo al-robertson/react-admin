@@ -19,6 +19,7 @@ import ApiOutlinedIcon from '@mui/icons-material/ApiOutlined';
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
 import TableChartOutlinedIcon from '@mui/icons-material/TableChartOutlined';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
+import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -145,22 +146,22 @@ const Sidebar = () => {
             />
             <Item
               title="Dashboards"
-              to="/"
+              to="/dashboard"
               icon={<InsertChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Reports"
-              to="/"
+              to="/placeholder"
               icon={<TableChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="API Library"
-              to="/"
-              icon={<ApiOutlinedIcon />}
+              to="/apilibrary"
+              icon={<LibraryBooksOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

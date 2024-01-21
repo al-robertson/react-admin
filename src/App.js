@@ -1,6 +1,7 @@
 import { ColorModeContext, useMode } from "./theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+import { AppBar, CssBaseline, ThemeProvider } from "@mui/material";
 import Topbar from "./scenes/global/Topbar";
+import Appbar from "./scenes/global/PrimarySearchAppBar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import {Routes, Route} from "react-router-dom";
@@ -17,6 +18,8 @@ import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
 import Geography from "./scenes/geography";
 import Calendar from "./scenes/calendar/calendar";
+import APILibrary from "./scenes/apilibrary";
+import Placeholder from "./scenes/placeholder";
 import React, {useState, useEffect} from 'react'
 import api from "./api";
 
@@ -34,10 +37,12 @@ function App() {
         <div className="app">
           <Sidebar />
           <main className="content">
-            <Topbar />
+            <Appbar />
             <Routes>
-              <Route path="/" element={<Dashboard />}/>
-              <Route path="/home" element={<Home />}/>              
+              <Route path="/" element={<Home />}/>
+              <Route path="/home" element={<Home />}/>   
+              <Route path="/dashboard" element={<Dashboard />}/>              
+              <Route path="/placeholder" element={<Placeholder />}/> 
               <Route path="/team" element={<Team />}/>
               <Route path="/contacts" element={<Contacts />}/>
               <Route path="/contacts2" element={<Contacts2 />}/>
@@ -50,6 +55,7 @@ function App() {
               <Route path="/faq" element={<FAQ />}/>
               <Route path="/geography" element={<Geography />}/>
               <Route path="/calendar" element={<Calendar />}/>
+              <Route path="/apilibrary" element={<APILibrary />}/>
              </Routes>
           </main>
         </div>
