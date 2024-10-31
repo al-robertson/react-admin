@@ -19,7 +19,12 @@ import FAQ from "./scenes/faq";
 import Geography from "./scenes/geography";
 import Calendar from "./scenes/calendar/calendar";
 import APILibrary from "./scenes/apilibrary";
+import CustPortal from "./scenes/custportal";
+import PlatformDash from "./scenes/custportal/platformdash";
+import ServiceDash from "./scenes/custportal/servicedash";
+import Heatmap from "./scenes/heatmap";
 import Placeholder from "./scenes/placeholder";
+import UnixDash from "./scenes/custportal/unix";
 import React, {useState, useEffect} from 'react'
 import api from "./api";
 
@@ -56,7 +61,12 @@ function App() {
               <Route path="/geography" element={<Geography />}/>
               <Route path="/calendar" element={<Calendar />}/>
               <Route path="/apilibrary" element={<APILibrary />}/>
-             </Routes>
+              <Route path="/custportal" element={<CustPortal />}/>
+              <Route path="/servicedash" element={<ServiceDash />} />
+              <Route path="/platformdash" element={<PlatformDash />} />
+              <Route path="/unix" element={<UnixDash />} />
+              <Route path="/heatmap" element={<Heatmap />}/>
+              </Routes>
           </main>
         </div>
       </ThemeProvider>

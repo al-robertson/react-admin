@@ -59,7 +59,7 @@ const APILibrary = () => {
         >
           <CustomCard
             title="VMware vROps"
-            content="Infrastructure carbon footprint & righ-size data."
+            content="Infrastructure carbon footprint & right-size data."
             icon={<ForestOutlinedIcon sx={{ fontSize: "40px" }} />}
           />
         </Box>

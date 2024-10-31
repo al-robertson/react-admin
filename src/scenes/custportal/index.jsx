@@ -20,7 +20,7 @@ const Home = () => {
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Box flexGrow={1} /> {/* Spacer element */}
+        <Box flexGrow={0} /> {/* Spacer element */}
         <Box>
           <Button
             sx={{
@@ -36,6 +36,9 @@ const Home = () => {
           </Button>
         </Box>
       </Box>
+      <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Header title="Customer Portal" subtitle="Welcome to the Customer Portal" />
+      </Box>
 
       {/* ROW 1 */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
@@ -49,40 +52,42 @@ const Home = () => {
       >
         <Box
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          /*backgroundColor={colors.primary[400]}*/
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
           <CustomCard
-            title="HS Status Dashboard"
-            content="Rolled up live status board for all platforms."
+            title="Platform Status Dashboard"
+            content="Current status across all platforms."
             icon={<InsertChartOutlinedIcon sx={{ fontSize: "40px" }} />}
+            navigateTo="/platformdash" // Specify the path to navigate to
           />
         </Box>
         <Box
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          /*backgroundColor={colors.primary[400]}*/
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <CustomCard
+            title="IBS Service Dashboard"
+            content="Current status across all IBS Services."
+            icon={<InsertChartOutlinedIcon sx={{ fontSize: "40px" }} />}
+            navigateTo="/servicedash" // Specify the path to navigate to
+          />
+        </Box>
+        <Box
+          gridColumn="span 3"
+          /*backgroundColor={colors.primary[400]}*/
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
           <CustomCard
             title="Block Storage Status Dashboard"
-            content="Current array status"
-            icon={<InsertChartOutlinedIcon sx={{ fontSize: "40px" }} />}
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <CustomCard
-            title="Unix Platform Dashboard"
-            content="Current status of the Unix estate"
+            content="Overview of the current array status."
             icon={<SpaceDashboardOutlinedIcon sx={{ fontSize: "40px" }} />}
           />
         </Box>
@@ -99,65 +104,6 @@ const Home = () => {
           <Typography variant="h6" color={colors.grey[500]} sx={{ mt: 2 }}>
             Add a new favourite
           </Typography>
-        </Box>
-      </Box>
-      {/* ROW 2 */}
-      <Box display="flex" justifyContent="space-between" alignItems="center" mt="60px">
-        <RegionHeader title="Quick actions" subtitle="Let's go...shortcuts to common tasks."/>
-      </Box>
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
-        gap="20px"
-      >
-        <Box
-          gridColumn="span 4"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <LargeCard
-            content="Browse our dashboards and reports."
-            icon={
-              <InsertChartOutlinedIcon
-                sx={{ fontSize: "80px", color: colors.greenAccent[300] }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 4"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <LargeCard
-            content="Browse our API library."
-            icon={
-              <LibraryBooksOutlinedIcon
-                sx={{ fontSize: "80px", color: colors.greenAccent[300] }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 4"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <LargeCard
-            content="View our coaching and learning tools."
-            icon={
-              <SchoolOutlinedIcon
-                sx={{ fontSize: "80px", color: colors.greenAccent[300] }}
-              />
-            }
-          />
         </Box>
       </Box>
     </Box>

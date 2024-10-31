@@ -19,7 +19,8 @@ import ApiOutlinedIcon from '@mui/icons-material/ApiOutlined';
 import InsertChartOutlinedIcon from '@mui/icons-material/InsertChartOutlined';
 import TableChartOutlinedIcon from '@mui/icons-material/TableChartOutlined';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
-import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
+import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined'
+import CustPortalOutlinedIcon from '@mui/icons-material/HealthAndSafetyOutlined';;
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -144,6 +145,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
+          <Item
+              title="Customer Portal"
+              to="/custportal"
+              icon={<CustPortalOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
             <Item
               title="Dashboards"
               to="/dashboard"
@@ -167,7 +175,7 @@ const Sidebar = () => {
             />
             <Item
               title="Forms"
-              to="/"
+              to="/placeholder"
               icon={<FeedOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -181,21 +189,21 @@ const Sidebar = () => {
             </Typography>
             <Item
               title="On-board API"
-              to="/form"
+              to="/placeholder"
               icon={<ApiOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Create Workflow"
-              to="/form"
+              to="/placeholder"
               icon={<AccountTreeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Permissions"
-              to="/form"
+              to="/placeholder"
               icon={<PersonOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -279,6 +287,12 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
+              title="Heatmap"
+              to="/heatmap"
+              icon={<PieChartOutlineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />            <Item
               title="Geographical"
               to="/geography"
               icon={<MapOutlinedIcon />}
